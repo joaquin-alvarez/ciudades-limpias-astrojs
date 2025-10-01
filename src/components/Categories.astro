@@ -23,7 +23,7 @@
         <div class="step-card" data-step="2">
           <div class="step-number">2</div>
           <div class="step-content">
-            <h3 class="step-title">CREAR CONTENIpDO DE COMUNICACIÓN</h3>
+            <h3 class="step-title">CREAR CONTENIDO DE COMUNICACIÓN</h3>
             <div class="step-points">20 puntos</div>
             <p class="step-description">
               Desarrollar una producción comunicacional en formato libre (video, podcast, infografía, etc.) que divulgue los contenidos trabajados de manera clara y atractiva.
@@ -106,7 +106,8 @@
     position: relative;
     max-width: 800px;
     margin: 0 auto 4rem;
-    padding-bottom: 20px; /* Espacio para los indicadores */
+    padding-bottom: 40px; /* Espacio aumentado para los indicadores */
+    overflow: visible; /* Asegurar que los elementos flotantes sean visibles */
   }
   
   .slider-arrow {
@@ -121,7 +122,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 2;
+    z-index: 3  ;
   }
   
   .prev-arrow {
@@ -134,10 +135,12 @@
   
   .steps-container {
     display: flex;
-    overflow: hidden;
     width: 100%;
     position: relative;
-    scroll-behavior: smooth;
+    min-height: 220px; /* Establecer altura mínima igual a la altura de la tarjeta */
+    height: 220px; /* Altura fija */
+    margin: 10px 0 40px; /* Espacio para la animación */
+    overflow: visible; /* Permitir que la animación sea visible fuera del contenedor */
   }
 
   .step-card {
@@ -161,7 +164,8 @@
     visibility: hidden;
     transform: translateY(20px);
     transition: opacity 0.6s ease, visibility 0.6s ease, transform 0.6s ease;
-    overflow: hidden;
+    overflow: visible; /* Permitir que el contenido y efectos sean visibles fuera de la tarjeta */
+    will-change: transform, opacity; /* Optimización de rendimiento */
   }
 
   .step-card::before {
@@ -183,6 +187,7 @@
     position: relative;
     transform: translateY(0);
     animation: cardPulse 0.5s ease-in-out;
+    z-index: 2; /* Asegurar que la tarjeta activa esté por encima */
   }
 
   @keyframes cardPulse {
@@ -193,13 +198,14 @@
 
   .step-indicators {
     position: absolute;
-    bottom: -30px;
+    bottom: 0;
     left: 0;
     right: 0;
     display: flex;
     justify-content: center;
     gap: 12px;
     margin-top: 15px;
+    z-index: 10; /* Asegurar que estén por encima de todo */
   }
 
   .step-indicator {
@@ -329,17 +335,89 @@
   .categories-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    gap: 18px;
     margin-top: 2rem;
   }
   
   .category-item {
     background: var(--color-primary);
     color: white;
-    padding: 15px;
+    padding: 20px 15px;
     text-align: center;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: bold;
+    height: 80px; /* Altura fija para todas las cajas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    font-family: var(--font-title);
+    font-size: 1.2rem;
+  }
+  
+  /* Efecto de borde brillante */
+  .category-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--color-secondary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  
+  /* Efecto de círculo decorativo */
+  .category-item::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    z-index: 0;
+    transition: all 0.4s ease;
+  }
+  
+  /* Efectos al pasar el cursor */
+  .category-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(145deg, var(--color-primary), #007a54);
+  }
+  
+  .category-item:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .category-item:hover::after {
+    transform: scale(1.5);
+    opacity: 0.8;
+  }
+  
+  /* Animación de rebote sutil al cargar la página */
+  @keyframes categoryAppear {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  .categories-list .category-item:nth-child(1) { animation: categoryAppear 0.5s ease-out 0.1s forwards; }
+  .categories-list .category-item:nth-child(2) { animation: categoryAppear 0.5s ease-out 0.2s forwards; }
+  .categories-list .category-item:nth-child(3) { animation: categoryAppear 0.5s ease-out 0.3s forwards; }
+  .categories-list .category-item:nth-child(4) { animation: categoryAppear 0.5s ease-out 0.4s forwards; }
+  
+  /* Estado inicial para la animación */
+  .categories-list .category-item {
+    opacity: 0;
   }
   
   @media (max-width: 992px) {

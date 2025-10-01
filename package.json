@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:dev": "astro build --config astro.dev.config.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },

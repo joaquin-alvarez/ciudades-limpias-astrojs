@@ -5,7 +5,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
     output: 'static',
     site: 'https://joaquin-alvarez.github.io',
-    base: '/ciudades-limpias',
+    base: '/ciudades-limpias-astrojs',
     build: {
         assets: '_astro',
         inlineStylesheets: 'auto'

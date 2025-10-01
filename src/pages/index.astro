@@ -11,26 +11,105 @@ import Footer from '../components/Footer.astro';
 ---
 
 <html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon.svg`} />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Concurso Ciudades Limpias - Escuelas por el Ambiente</title>
-		<!-- Estilos globales -->
-		<link rel="stylesheet" href={`${import.meta.env.BASE_URL}/src/styles/global.css`} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<Hero />
-			<AboutContest />
-			<Categories />
-			<Workshop />
-			<Projects />
-			<Schools />
-			<Dates />
-		</main>
-		<Footer />
-	</body>
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon.svg`} />
+	<meta name="viewport" content="width=device-width" />
+	<meta name="generator" content={Astro.generator} />
+	<title>Concurso Ciudades Limpias - Escuelas por el Ambiente</title>
+</head>
+<body>
+	<Header />
+	<main>
+		<Hero />
+		<AboutContest />
+		<Categories />
+		<Workshop />
+		<Projects />
+		<Schools />
+		<Dates />
+	</main>
+	<Footer />
+</body>
 </html>
+
+<style is:global>
+	/* Importación de Google Fonts */
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap'); /* Fuente para texto general */
+	@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); /* Fuente para títulos destacados */
+	
+	/* Estilos globales */
+	:root {
+		--color-primary: #005E41;     /* Verde oscuro */
+		--color-secondary: #8CC63F;   /* Verde lima */
+		--color-white: #FFFFFF;
+		--color-light-bg: #F5F2EA;
+		--font-primary: 'Montserrat', sans-serif;
+		--font-title: 'Bebas Neue', cursive;
+	}
+	
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	
+	body {
+		font-family: var(--font-primary);
+		line-height: 1.6;
+	}
+	
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+	
+	.container {
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+	
+	/* Estilos para títulos */
+	.section-title {
+		font-family: var(--font-title);
+		font-size: 2.5rem;
+		font-weight: bold;
+		color: var(--color-primary);
+		margin-bottom: 1.5rem;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+	
+	.textured-title {
+		font-family: var(--font-title);
+		letter-spacing: 1px;
+	}
+	
+	.btn {
+		display: inline-block;
+		padding: 12px 30px;
+		background-color: var(--color-white);
+		color: var(--color-primary);
+		border-radius: 30px;
+		font-weight: bold;
+		text-align: center;
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	}
+	
+	.btn:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+	}
+	
+	.section-title {
+		font-size: 2.5rem;
+		font-weight: bold;
+		color: var(--color-primary);
+		margin-bottom: 1.5rem;
+		text-transform: uppercase;
+	}
+</style>
+

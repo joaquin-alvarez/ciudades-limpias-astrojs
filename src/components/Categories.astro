@@ -8,20 +8,60 @@
     <div class="steps-slider">
       <button class="slider-arrow prev-arrow">&lt;</button>
       
-      <div class="step-card active">
-        <div class="step-number">1</div>
-        <div class="step-content">
-          <h3 class="step-title">EDUCAR Y PLANIFICAR</h3>
-          <div class="step-points">20 puntos</div>
-          <p class="step-description">
-            Diseñar un proyecto pedagógico que aborde uno de los ejes temáticos propuestos con rigor científico y metodología educativa.
-          </p>
+      <div class="steps-container">
+        <div class="step-card" data-step="1">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3 class="step-title">EDUCAR Y PLANIFICAR</h3>
+            <div class="step-points">20 puntos</div>
+            <p class="step-description">
+              Diseñar un proyecto pedagógico que aborde uno de los ejes temáticos propuestos con rigor científico y metodología educativa.
+            </p>
+          </div>
+        </div>
+
+        <div class="step-card" data-step="2">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3 class="step-title">CREAR CONTENIpDO DE COMUNICACIÓN</h3>
+            <div class="step-points">20 puntos</div>
+            <p class="step-description">
+              Desarrollar una producción comunicacional en formato libre (video, podcast, infografía, etc.) que divulgue los contenidos trabajados de manera clara y atractiva.
+            </p>
+          </div>
+        </div>
+
+        <div class="step-card" data-step="3">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3 class="step-title">GENERAR IMPACTO COMUNITARIO</h3>
+            <div class="step-points">30 puntos</div>
+            <p class="step-description">
+              Implementar acciones concretas en su comunidad que generen transformaciones positivas y medibles en el presente.
+            </p>
+          </div>
+        </div>
+
+        <div class="step-card" data-step="4">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3 class="step-title">AMPLIAR LA DIVULGACIÓN</h3>
+            <div class="step-points">30 puntos</div>
+            <p class="step-description">
+              Maximizar el alcance de sus producciones comunicacionales para generar conciencia ambiental en la mayor audiencia posible.
+            </p>
+          </div>
         </div>
       </div>
       
-      <!-- Aquí irían más tarjetas de pasos que se mostrarían con el slider -->
-      
       <button class="slider-arrow next-arrow">&gt;</button>
+
+      <div class="step-indicators">
+        <span class="step-indicator active" data-step="1"></span>
+        <span class="step-indicator" data-step="2"></span>
+        <span class="step-indicator" data-step="3"></span>
+        <span class="step-indicator" data-step="4"></span>
+      </div>
     </div>
     
     <div class="categories-content">
@@ -34,7 +74,7 @@
       </div>
       
       <div class="categories-image">
-        <img src={`${import.meta.env.BASE_URL}/images/categories-icon.png`} alt="Íconos de categorías ambientales" />
+        <img src={`${import.meta.env.BASE_URL}/images/categories-icon.webp`} alt="Íconos de categorías ambientales" />
       </div>
     </div>
     
@@ -66,6 +106,7 @@
     position: relative;
     max-width: 800px;
     margin: 0 auto 4rem;
+    padding-bottom: 20px; /* Espacio para los indicadores */
   }
   
   .slider-arrow {
@@ -91,16 +132,114 @@
     margin-left: -20px;
   }
   
+  .steps-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    scroll-behavior: smooth;
+  }
+
   .step-card {
     background: white;
     border: 2px solid var(--color-primary);
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 30px;
-    max-width: 80%;
-    margin: 0 auto;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    height: 220px; /* Alto fijo para todas las tarjetas */
+    flex: 0 0 100%;
     display: flex;
-    gap: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    gap: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, visibility 0.6s ease, transform 0.6s ease;
+    overflow: hidden;
+  }
+
+  .step-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 180px;
+    height: 180px;
+    background-color: rgba(140, 198, 63, 0.08); /* Color secundario con opacidad */
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+    z-index: 0;
+  }
+
+  .step-card.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    transform: translateY(0);
+    animation: cardPulse 0.5s ease-in-out;
+  }
+
+  @keyframes cardPulse {
+    0% { transform: scale(0.98); }
+    50% { transform: scale(1.01); }
+    100% { transform: scale(1); }
+  }
+
+  .step-indicators {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 15px;
+  }
+
+  .step-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  .step-indicator::before {
+    content: attr(data-step);
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px) scale(0.7);
+    opacity: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: 0.75rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .step-indicator:hover::before {
+    transform: translateX(-50%) translateY(0) scale(0.7);
+    opacity: 1;
+  }
+
+  .step-indicator.active {
+    background-color: var(--color-primary);
+    transform: scale(1.3);
+  }
+  
+  .step-indicator.active::before {
+    transform: translateX(-50%) translateY(0) scale(0.7);
+    opacity: 1;
   }
   
   .step-number {
@@ -114,16 +253,31 @@
     justify-content: center;
     font-size: 2.5rem;
     font-weight: bold;
+    font-family: var(--font-title);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transform: rotate(-5deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .step-card:hover .step-number {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
   }
   
   .step-content {
     flex: 1;
+    position: relative;
+    z-index: 1;
   }
   
   .step-title {
     color: var(--color-primary);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin: 0 0 10px;
+    font-family: var(--font-title);
+    letter-spacing: 0.5px;
   }
   
   .step-points {
@@ -200,20 +354,87 @@
 </style>
 
 <script>
-  // Script simple para funcionalidad del slider
-  // En una implementación completa se añadirían más tarjetas y lógica
-  const prevArrow = document.querySelector('.prev-arrow');
-  const nextArrow = document.querySelector('.next-arrow');
-  
-  if (prevArrow && nextArrow) {
+  document.addEventListener('DOMContentLoaded', () => {
+    const stepsContainer = document.querySelector('.steps-container');
+    const stepCards = document.querySelectorAll('.step-card');
+    const prevArrow = document.querySelector('.prev-arrow')! as HTMLButtonElement;
+    const nextArrow = document.querySelector('.next-arrow')! as HTMLButtonElement;
+    const indicators = document.querySelectorAll('.step-indicator');
+    
+    let currentStep = 1;
+    const totalSteps = stepCards.length;
+
+    // Inicializar - mostrar la primera tarjeta
+    updateSlider();
+
+    // Event listeners para flechas de navegación con bucle infinito
     prevArrow.addEventListener('click', () => {
-      console.log('Slide anterior');
-      // Implementar navegación del slider
+      currentStep = currentStep > 1 ? currentStep - 1 : totalSteps; // Ir al último si estamos en el primero
+      updateSlider();
     });
     
     nextArrow.addEventListener('click', () => {
-      console.log('Slide siguiente');
-      // Implementar navegación del slider
+      currentStep = currentStep < totalSteps ? currentStep + 1 : 1; // Volver al primero si estamos en el último
+      updateSlider();
     });
-  }
+
+    // Event listeners para indicadores
+    indicators.forEach(indicator => {
+      indicator.addEventListener('click', () => {
+        currentStep = parseInt(indicator.getAttribute('data-step')!);
+        updateSlider();
+      });
+    });
+
+    // Swipe para dispositivos táctiles
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    stepsContainer!.addEventListener('touchstart', (e: Event) => {
+      const touchEvent = e as TouchEvent;
+      touchStartX = touchEvent.changedTouches[0].screenX;
+    }, false);
+    
+    stepsContainer!.addEventListener('touchend', (e: Event) => {
+      const touchEvent = e as TouchEvent;
+      touchEndX = touchEvent.changedTouches[0].screenX;
+      handleSwipe();
+    }, false);
+    
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      if (touchEndX < touchStartX - swipeThreshold) {
+        // Swipe izquierda -> siguiente (con bucle infinito)
+        currentStep = currentStep < totalSteps ? currentStep + 1 : 1;
+        updateSlider();
+      } else if (touchEndX > touchStartX + swipeThreshold) {
+        // Swipe derecha -> anterior (con bucle infinito)
+        currentStep = currentStep > 1 ? currentStep - 1 : totalSteps;
+        updateSlider();
+      }
+    }
+
+    // Función para actualizar el estado del carrusel
+    function updateSlider() {
+      // Ocultar todas las tarjetas con un pequeño retraso para crear transición suave
+      stepCards.forEach((card, index) => {
+        const cardStep = parseInt(card.getAttribute('data-step')!);
+        
+        // Aplicar transición con un pequeño retraso para que la salida y entrada se vean bien
+        setTimeout(() => {
+          card.classList.toggle('active', cardStep === currentStep);
+        }, cardStep === currentStep ? 50 : 0);
+      });
+      
+      // Los botones siempre están activos en un carrusel infinito
+      prevArrow.style.opacity = '1';
+      nextArrow.style.opacity = '1';
+      
+      // Actualizar indicadores
+      indicators.forEach(indicator => {
+        const step = parseInt(indicator.getAttribute('data-step')!);
+        indicator.classList.toggle('active', step === currentStep);
+      });
+    }
+  });
 </script>

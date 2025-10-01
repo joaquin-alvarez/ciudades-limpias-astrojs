@@ -5,7 +5,7 @@
   <div class="container">
     <div class="about-content">
       <div class="about-image">
-        <img src="/images/about-contest.jpg" alt="Niños trabajando en proyectos ambientales" />
+        <img src={`${import.meta.env.BASE_URL}/images/about-contest.jpg`} alt="Niños trabajando en proyectos ambientales" />
       </div>
       <div class="about-text">
         <h2 class="section-title textured-title">¿DE QUÉ TRATA<br />EL CONCURSO?</h2>
@@ -66,7 +66,7 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     /* Efecto texturizado */
-    background-image: url('/textures/grunge-texture.png');
+    background-image: url({`${import.meta.env.BASE_URL}/textures/grunge-texture.png`});
     background-repeat: repeat;
     background-clip: text;
     -webkit-background-clip: text;

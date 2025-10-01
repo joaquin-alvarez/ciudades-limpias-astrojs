@@ -1,16 +1,36 @@
 ---
-
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import AboutContest from '../components/AboutContest.astro';
+import Categories from '../components/Categories.astro';
+import Workshop from '../components/Workshop.astro';
+import Projects from '../components/Projects.astro';
+import Schools from '../components/Schools.astro';
+import Dates from '../components/Dates.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Concurso Ciudades Limpias - Escuelas por el Ambiente</title>
+		<!-- Estilos globales -->
+		<link rel="stylesheet" href="./styles/global.css" />
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<Header />
+		<main>
+			<Hero />
+			<AboutContest />
+			<Categories />
+			<Workshop />
+			<Projects />
+			<Schools />
+			<Dates />
+		</main>
+		<Footer />
 	</body>
 </html>

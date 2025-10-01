@@ -1,0 +1,219 @@
+---
+---
+
+<section id="que-haran" class="categories-section">
+  <div class="container">
+    <h2 class="section-title textured-title">¿QUÉ HARÁN LAS ESCUELAS?</h2>
+    
+    <div class="steps-slider">
+      <button class="slider-arrow prev-arrow">&lt;</button>
+      
+      <div class="step-card active">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3 class="step-title">EDUCAR Y PLANIFICAR</h3>
+          <div class="step-points">20 puntos</div>
+          <p class="step-description">
+            Diseñar un proyecto pedagógico que aborde uno de los ejes temáticos propuestos con rigor científico y metodología educativa.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Aquí irían más tarjetas de pasos que se mostrarían con el slider -->
+      
+      <button class="slider-arrow next-arrow">&gt;</button>
+    </div>
+    
+    <div class="categories-content">
+      <div class="categories-text">
+        <h3 class="categories-subtitle">EJES TEMÁTICOS DISPONIBLES</h3>
+        
+        <p class="categories-description">
+          Las escuelas participantes deben elegir uno de los siguientes ejes temáticos: microbasurales, contaminación de arroyos, gestión de residuos sólidos urbanos, separación en origen y canal de denuncias.
+        </p>
+      </div>
+      
+      <div class="categories-image">
+        <img src="/images/categories-icon.png" alt="Íconos de categorías ambientales" />
+      </div>
+    </div>
+    
+    <div class="categories-list">
+      <div class="category-item">MICROBASURALES</div>
+      <div class="category-item">SEPARACIÓN EN ORIGEN</div>
+      <div class="category-item">CONTAMINACIÓN DE ARROYOS</div>
+      <div class="category-item">CANAL DE DENUNCIAS</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .categories-section {
+    padding: 80px 0;
+    background-color: var(--color-light-bg);
+  }
+  
+  .textured-title {
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: 3rem;
+  }
+  
+  .steps-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+  }
+  
+  .slider-arrow {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .prev-arrow {
+    margin-right: -20px;
+  }
+  
+  .next-arrow {
+    margin-left: -20px;
+  }
+  
+  .step-card {
+    background: white;
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .step-number {
+    background: var(--color-secondary);
+    color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .step-content {
+    flex: 1;
+  }
+  
+  .step-title {
+    color: var(--color-primary);
+    font-size: 1.3rem;
+    margin: 0 0 10px;
+  }
+  
+  .step-points {
+    display: inline-block;
+    background: var(--color-secondary);
+    color: white;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .step-description {
+    color: #333;
+  }
+  
+  .categories-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 2rem;
+  }
+  
+  .categories-text {
+    flex: 1;
+  }
+  
+  .categories-subtitle {
+    color: var(--color-primary);
+    font-size: 1.8rem;
+    margin: 0 0 1.5rem;
+  }
+  
+  .categories-description {
+    color: #333;
+    font-size: 1.1rem;
+  }
+  
+  .categories-image {
+    flex: 1;
+    max-width: 40%;
+    text-align: center;
+  }
+  
+  .categories-image img {
+    max-width: 100%;
+  }
+  
+  .categories-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 2rem;
+  }
+  
+  .category-item {
+    background: var(--color-primary);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 992px) {
+    .categories-content {
+      flex-direction: column;
+    }
+    
+    .categories-image {
+      max-width: 100%;
+    }
+  }
+</style>
+
+<script>
+  // Script simple para funcionalidad del slider
+  // En una implementación completa se añadirían más tarjetas y lógica
+  const prevArrow = document.querySelector('.prev-arrow');
+  const nextArrow = document.querySelector('.next-arrow');
+  
+  if (prevArrow && nextArrow) {
+    prevArrow.addEventListener('click', () => {
+      console.log('Slide anterior');
+      // Implementar navegación del slider
+    });
+    
+    nextArrow.addEventListener('click', () => {
+      console.log('Slide siguiente');
+      // Implementar navegación del slider
+    });
+  }
+</script>

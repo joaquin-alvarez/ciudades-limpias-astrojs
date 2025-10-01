@@ -1,0 +1,115 @@
+---
+---
+
+<section id="de-que-trata" class="about-contest">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-image">
+        <img src="/images/about-contest.jpg" alt="Niños trabajando en proyectos ambientales" />
+      </div>
+      <div class="about-text">
+        <h2 class="section-title textured-title">¿DE QUÉ TRATA<br />EL CONCURSO?</h2>
+        
+        <p class="description">
+          Una propuesta educativa y creativa para formar a 
+          <strong>los nuevos comunicadores ambientales del futuro.</strong>
+          Las escuelas se convierten en protagonistas del cuidado del ambiente mientras desarrollan 
+          competencias de comunicación científica para transformar su territorio.
+        </p>
+        
+        <h3 class="subsection-title">¿A QUIÉNES ESTÁ DIRIGIDO?</h3>
+        
+        <p class="description">
+          Centros de Desarrollo Infantil, nivel inicial, primaria, secundario y terciario. 
+          Gestión pública y privada del partido de Escobar.
+        </p>
+        
+        <a href="#" class="btn secondary-btn">BASES Y CONDICIONES</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-contest {
+    padding: 80px 0;
+    background-color: var(--color-white);
+  }
+  
+  .about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .about-image {
+    flex: 1;
+    max-width: 50%;
+  }
+  
+  .about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-text {
+    flex: 1;
+  }
+  
+  .textured-title {
+    color: var(--color-primary);
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* Efecto texturizado */
+    background-image: url('/textures/grunge-texture.png');
+    background-repeat: repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  
+  .description {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .description strong {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+  
+  .subsection-title {
+    color: var(--color-primary);
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem;
+    font-weight: 700;
+  }
+  
+  .secondary-btn {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0, 94, 65, 0.2);
+  }
+  
+  @media (max-width: 992px) {
+    .about-content {
+      flex-direction: column;
+    }
+    
+    .about-image {
+      max-width: 100%;
+    }
+  }
+</style>

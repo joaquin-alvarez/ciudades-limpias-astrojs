@@ -1,0 +1,125 @@
+---
+---
+
+<section id="escuelas" class="schools-section">
+  <div class="container">
+    <h2 class="section-title textured-title">ESCUELAS PARTICIPANTES</h2>
+    
+    <p class="schools-description">
+      Más de 60 escuelas de diferentes niveles de todo el partido de Escobar 
+      están participando del Concurso Ciudades Limpias.
+    </p>
+    
+    <div class="schools-content">
+      <div class="schools-list">
+        <p class="schools-text">
+          Asociación Cristiana de Jóvenes - YMCA – CEBAS N° 37 – Centro de Educación Agraria N° 25 – Centro Educativo 
+          de Nivel Secundario N° 454 – Colegio Arrayanes – Colegio del Faro – Colegio del Faro Puertos – Colegio 
+          Preuniversitario Dr. Ramón A. Cereijo - UBA – El Viejo Abadal – Escuela Arcángel Gabriel – Escuela de Educación 
+          Secundaria N° 7 Mariano Moreno – Escuela Primaria Municipal Emilio Alberto Arévalo – Escuela Primaria N° 1 
+          Cnel. José de San Martín – Escuela Primaria N° 3 – Escuela Primaria N° 12 Domingo F. Sarmiento – Escuela 
+          Primaria N° 17 Martín Miguel de Güemes – Escuela Primaria N° 24 – Escuela Primaria N° 32 Provincia de Entre 
+          Ríos – Escuela Primaria N° 34 Leopoldo Marechal – Escuela Primaria N° 706 para Jóvenes, Adultos y Adultos 
+          Mayores – Escuela Primaria N° 7 Mariano Moreno – Escuela Primaria Raíces y Alas – Escuela Secundaria N° 10 – 
+          Escuela Secundaria N° 17 – Escuela Secundaria N° 19 Martha Salotti – Escuela Secundaria N° 29 Sul Salcor – 
+          Escuela Secundaria N° 29 – Escuela Secundaria N° 33 Héroes de Malvinas – Escuela Secundaria N° 4 Alicia 
+          Moreau de Justo – Escuela Secundaria N° 12 Raúl Alfonsín – Escuela Secundaria N° 13 – Escuela Secundaria N° 
+          16 Héroes y Caídos en Malvinas – Escuela Secundaria N° 18 Tito Wenner – Escuela Técnica N° 1 Hipólito Bouchard 
+          – Escuela Técnica N° 3 – EES N° 220 – Eejika Kohlo – Historias de Viajeros (DIEP) – Instituto José María 
+          Estrada – Instituto Municipal Julieta Lanteri – Instituto San Antonio de Padua – Jardín de Infantes N° 902 
+          Florencio Molina Campos – Jardín de Infantes N° 905 Dr. Samuel Gurfinkel – Jardín de Infantes N° 912 Dino 
+          Cambi – Jardín de Infantes N° 915 Pedro Carlos Costa – Jardín de Infantes N° 921 – Jardín de Infantes N° 929 
+          Flor de Irupé – Jardín Municipal El Jacarandá – La Lumbrera – Los Arenales – Nort Field – Nubecitas – Primaria 
+          N° 11 Paula Albarracín de Sarmiento – Soldado de Malvinas N° 27.
+        </p>
+      </div>
+      
+      <div class="plant-illustration">
+        <img src="/images/plant-illustration.png" alt="Ilustración de planta" />
+      </div>
+    </div>
+    
+    <div class="button-container">
+      <a href="https://escobar360.gob.ar" target="_blank" class="btn school-btn">ESCOBAR 360</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .schools-section {
+    padding: 80px 0;
+    background-color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .schools-description {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.7;
+  }
+  
+  .schools-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+  }
+  
+  .schools-list {
+    flex: 2;
+  }
+  
+  .schools-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    text-align: justify;
+    color: #333;
+  }
+  
+  .plant-illustration {
+    flex: 1;
+    max-width: 40%;
+    position: relative;
+  }
+  
+  .plant-illustration img {
+    max-width: 100%;
+  }
+  
+  .button-container {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .school-btn {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    display: inline-block;
+    padding: 15px 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 30px;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(0, 94, 65, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .school-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 94, 65, 0.4);
+  }
+  
+  @media (max-width: 992px) {
+    .schools-content {
+      flex-direction: column;
+    }
+    
+    .plant-illustration {
+      max-width: 60%;
+      margin: 0 auto;
+    }
+  }
+</style>

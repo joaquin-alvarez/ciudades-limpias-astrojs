@@ -1,0 +1,123 @@
+---
+---
+
+<section id="taller-comunicacion" class="workshop-section">
+  <div class="container">
+    <div class="workshop-content">
+      <div class="workshop-image">
+        <div class="image-container">
+          <img src="/images/workshop-image.png" alt="Taller de comunicación" />
+          <div class="escobar-badge">ESCOBAR 360</div>
+        </div>
+      </div>
+      
+      <div class="workshop-info">
+        <h2 class="section-title textured-title">
+          TALLER DE<br />
+          COMUNICACIÓN
+        </h2>
+        
+        <p class="workshop-description">
+          Las escuelas que están participando del concurso Ciudades Limpias pueden inscribirse en el <strong>Taller de Comunicación</strong>. El objetivo es acompañar en la etapa 2 del concurso, brindando herramientas para que las y los estudiantes comuniquen sus propuestas de forma clara, creativa y efectiva.
+        </p>
+        
+        <p class="workshop-schedule">
+          Se dictará durante <strong>agosto y septiembre</strong>, los lunes, miércoles y jueves, de 11 a 13 hs. y de 15 a 17 hs., a cargo del equipo de comunicación de Escobar Sostenible.
+        </p>
+        
+        <p class="workshop-optional">
+          El taller es opcional, pero puede ser clave para difundir mejor sus proyectos y sumar más chances de ganar.
+        </p>
+        
+        <p class="workshop-registration">
+          Para solicitarlo, completá la inscripción en Escobar 360, dentro del botón <strong>Campaña Escuelas por el Ambiente</strong>. Luego, el equipo se contactará para coordinar la visita.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .workshop-section {
+    padding: 80px 0;
+    background-color: var(--color-white);
+  }
+  
+  .workshop-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  .workshop-image {
+    flex: 1;
+    max-width: 45%;
+  }
+  
+  .image-container {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .image-container img {
+    width: 100%;
+    display: block;
+  }
+  
+  .escobar-badge {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-primary);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    white-space: nowrap;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .workshop-info {
+    flex: 1;
+  }
+  
+  .workshop-description,
+  .workshop-schedule,
+  .workshop-optional,
+  .workshop-registration {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.7;
+  }
+  
+  .workshop-description strong,
+  .workshop-schedule strong,
+  .workshop-registration strong {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+  
+  .workshop-optional {
+    font-style: italic;
+  }
+  
+  @media (max-width: 992px) {
+    .workshop-content {
+      flex-direction: column;
+    }
+    
+    .workshop-image {
+      max-width: 100%;
+      order: 1;
+    }
+    
+    .workshop-info {
+      order: 2;
+    }
+  }
+</style>

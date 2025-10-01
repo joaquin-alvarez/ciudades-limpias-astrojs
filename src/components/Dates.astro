@@ -1,0 +1,143 @@
+---
+---
+
+<section id="fechas" class="dates-section">
+  <div class="container">
+    <div class="dates-content">
+      <div class="dates-illustration">
+        <img src="/images/likes-illustration.png" alt="Ilustración de likes y corazones" />
+      </div>
+      
+      <div class="dates-info">
+        <h2 class="section-title textured-title">FECHAS DEL<br />CONCURSO</h2>
+        
+        <div class="date-item">
+          <h3 class="date-title">Apertura de inscripción:</h3>
+          <p class="date-detail">desde junio de 2025 hasta el 10 de agosto 2025.</p>
+        </div>
+        
+        <div class="date-item">
+          <h3 class="date-title">Evaluación de proyectos:</h3>
+          <p class="date-detail">3 de septiembre de 2025.</p>
+        </div>
+        
+        <div class="date-item">
+          <h3 class="date-title">Entrega de premios:</h3>
+          <p class="date-detail">último trimestre del año con fecha a definir.</p>
+        </div>
+        
+        <p class="dates-note">
+          El calendario podrá ajustarse; cualquier cambio será notificado por los canales oficiales.
+        </p>
+        
+        <div class="dates-buttons">
+          <a href="https://escobar360.gob.ar" target="_blank" class="btn dates-btn primary-btn">ESCOBAR 360</a>
+          <a href="#" class="btn dates-btn secondary-btn">BASES Y CONDICIONES</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .dates-section {
+    padding: 80px 0;
+    background-color: var(--color-light-bg);
+  }
+  
+  .dates-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  .dates-illustration {
+    flex: 1;
+    max-width: 40%;
+  }
+  
+  .dates-illustration img {
+    max-width: 100%;
+  }
+  
+  .dates-info {
+    flex: 1;
+  }
+  
+  .date-item {
+    margin-bottom: 20px;
+  }
+  
+  .date-title {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  
+  .date-detail {
+    color: #333;
+    font-size: 1.1rem;
+  }
+  
+  .dates-note {
+    margin: 30px 0;
+    font-style: italic;
+    color: #555;
+  }
+  
+  .dates-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  .dates-btn {
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .primary-btn {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: 0 4px 10px rgba(0, 94, 65, 0.3);
+  }
+  
+  .secondary-btn {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dates-btn:hover {
+    transform: translateY(-3px);
+  }
+  
+  .primary-btn:hover {
+    box-shadow: 0 6px 15px rgba(0, 94, 65, 0.4);
+  }
+  
+  .secondary-btn:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  @media (max-width: 992px) {
+    .dates-content {
+      flex-direction: column;
+    }
+    
+    .dates-illustration {
+      max-width: 70%;
+      margin: 0 auto;
+    }
+    
+    .dates-buttons {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+</style>

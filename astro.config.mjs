@@ -5,7 +5,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
     output: 'static',
     site: 'https://www.escobar.gob.ar',
-    base: '/ciudadeslimpias',
+    base: '/ciudades-limpias',
     build: {
         assets: '_astro',
         inlineStylesheets: 'auto'

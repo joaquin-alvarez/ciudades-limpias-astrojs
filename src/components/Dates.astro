@@ -12,18 +12,66 @@
         <h2 class="section-title textured-title">FECHAS DEL<br />CONCURSO</h2>
         
         <div class="date-item">
-          <h3 class="date-title">Apertura de inscripción:</h3>
-          <p class="date-detail">desde junio de 2025 hasta el 10 de agosto 2025.</p>
+          <div class="date-icon"></div>
+          <div class="date-content">
+            <h3 class="date-title">Apertura de inscripción</h3>
+            <p class="date-detail">Desde junio de 2025 hasta el 10 de agosto de 2025</p>
+          </div>
+        </div>
+
+        <div class="date-item">
+          <div class="date-icon"></div>
+          <div class="date-content">
+            <h3 class="date-title">Entrega del proyecto pedagógico</h3>
+            <p class="date-detail">Hasta el lunes 6 de octubre de 2025</p>
+          </div>
+        </div>
+        
+        <div class="date-item highlight-item">
+          <div class="date-icon content-icon"></div>
+          <div class="date-content">
+            <h3 class="date-title">Creación de contenido</h3>
+            <p class="date-detail">
+              Desarrollar una producción comunicacional en <strong>formato libre</strong> (video, podcast, infografía, etc.) 
+              que divulgue de manera clara y atractiva los contenidos trabajados.
+            </p>
+            <p class="date-detail deadline">
+              <strong>Fecha límite:</strong> Hasta el 31 de octubre de 2025 para compartir los links o archivos del producto, 
+              junto con una captura de las métricas de la cuenta de redes sociales donde se publicó el contenido.
+            </p>
+            <div class="example-box">
+              <p class="example-title">Ejemplo de entrega:</p>
+              <ul class="example-list">
+                <li>Link o archivo del contenido</li>
+                <li>Captura de métricas (foto)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="date-item">
+          <div class="date-icon"></div>
+          <div class="date-content">
+            <h3 class="date-title">Evaluación de proyectos por parte del jurado</h3>
+            <p class="date-detail">Del 1 al 30 de noviembre de 2025</p>
+          </div>
         </div>
         
         <div class="date-item">
-          <h3 class="date-title">Evaluación de proyectos:</h3>
-          <p class="date-detail">3 de septiembre de 2025.</p>
+          <div class="date-icon"></div>
+          <div class="date-content">
+            <h3 class="date-title">Anuncio de ganadores</h3>
+            <p class="date-detail">Lunes 15 de diciembre de 2025</p>
+            <p class="date-note">(FECHA Y LUGAR A CONFIRMAR)</p>
+          </div>
         </div>
-        
+
         <div class="date-item">
-          <h3 class="date-title">Entrega de premios:</h3>
-          <p class="date-detail">último trimestre del año con fecha a definir.</p>
+          <div class="date-icon"></div>
+          <div class="date-content">
+            <h3 class="date-title">Entrega de premios</h3>
+            <p class="date-detail">Último trimestre del año con fecha a definir</p>
+          </div>
         </div>
         
         <p class="dates-note">
@@ -33,6 +81,26 @@
         <div class="dates-buttons">
           <a href="https://escobar360.gob.ar/servicio.aspx?ser_id=1069" target="_blank" class="btn dates-btn primary-btn">ESCOBAR 360</a>
           <a href="https://drive.google.com/drive/folders/1C5DKqE0NiL44laDVxfdvwxneEZQNIDHs" target="_blank" class="btn dates-btn secondary-btn">BASES Y CONDICIONES</a>
+        </div>
+
+        <div class="download-section">
+          <h3 class="download-title">Material de apoyo</h3>
+          <div class="download-buttons">
+            <a href="#" target="_blank" class="btn download-btn participants-btn">
+              <div class="btn-icon participants-icon"></div>
+              <span class="btn-text">
+                <strong>Guía de armado del proyecto</strong>
+                <small>Para participantes</small>
+              </span>
+            </a>
+            <a href="#" target="_blank" class="btn download-btn teachers-btn">
+              <div class="btn-icon teachers-icon"></div>
+              <span class="btn-text">
+                <strong>Guía para docentes</strong>
+                <small>Material didáctico</small>
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -65,19 +133,125 @@
   }
   
   .date-item {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .date-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 94, 65, 0.1);
+  }
+
+  .date-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    position: relative;
+    flex-shrink: 0;
+  }
+  
+  .date-icon:before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--color-secondary);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .content-icon:before {
+    background-color: var(--color-white);
+    width: 20px;
+    height: 3px;
+    border-radius: 2px;
+  }
+  
+  .content-icon:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: var(--color-white);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  .date-content {
+    flex: 1;
   }
   
   .date-title {
     color: var(--color-primary);
     font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
   }
   
   .date-detail {
     color: #333;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .date-detail strong {
+    color: var(--color-primary);
+  }
+
+  .date-detail.deadline {
+    padding: 10px;
+    border-left: 3px solid var(--color-secondary);
+    border-radius: 4px;
+    margin-top: 12px;
+    background-color: rgba(140, 198, 63, 0.08);
+  }
+
+  .date-note {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin-top: 5px;
+  }
+
+  .highlight-item {
+    border: 2px solid var(--color-secondary);
+    background-color: rgba(140, 198, 63, 0.05);
+  }
+
+  .example-box {
+    background: white;
+    border-radius: 6px;
+    padding: 12px;
+    margin-top: 12px;
+    border: 1px solid rgba(0, 94, 65, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .example-title {
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .example-list {
+    margin-left: 20px;
+    color: #333;
+  }
+
+  .example-list li {
+    margin-bottom: 4px;
   }
   
   .dates-note {
@@ -124,6 +298,135 @@
   .secondary-btn:hover {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
   }
+
+  .download-section {
+    margin-top: 40px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    border: 2px solid var(--color-secondary);
+    box-shadow: 0 4px 12px rgba(140, 198, 63, 0.1);
+  }
+
+  .download-title {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .download-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .download-btn {
+    flex: 1;
+    max-width: 280px;
+    padding: 20px 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .download-btn .btn-icon {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .participants-icon:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 24px;
+    border: 2px solid white;
+    border-radius: 2px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .participants-icon:after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 2px;
+    background-color: white;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 6px 0 white, 0 12px 0 white;
+  }
+  
+  .teachers-icon:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-radius: 50%;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .teachers-icon:after {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 12px;
+    border-radius: 4px 4px 0 0;
+    background-color: white;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .download-btn .btn-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .download-btn .btn-text strong {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .download-btn .btn-text small {
+    font-size: 0.85rem;
+    opacity: 0.85;
+  }
+
+  .participants-btn {
+    background: linear-gradient(135deg, var(--color-primary), #007a54);
+    color: white;
+  }
+
+  .participants-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 94, 65, 0.3);
+  }
+
+  .teachers-btn {
+    background: linear-gradient(135deg, var(--color-secondary), #a0d84f);
+    color: white;
+  }
+
+  .teachers-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(140, 198, 63, 0.3);
+  }
   
   @media (max-width: 992px) {
     .dates-content {
@@ -138,6 +441,31 @@
     .dates-buttons {
       flex-direction: column;
       gap: 15px;
+    }
+
+    .download-buttons {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .download-btn {
+      max-width: 100%;
+    }
+
+    .date-item {
+      padding: 12px;
+    }
+
+    .date-emoji {
+      font-size: 1.5rem;
+    }
+
+    .date-title {
+      font-size: 1.1rem;
+    }
+
+    .date-detail {
+      font-size: 0.95rem;
     }
   }
 </style>
